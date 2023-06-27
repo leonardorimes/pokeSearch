@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Card from "../../Components/Card";
 
 
 const pokemonURL = import.meta.env.VITE_API_Original151
@@ -15,7 +15,6 @@ const Home = () => {
     const getOriginalPokemon = async (url) => {
         const res = await fetch(url)
         const data = await res.json()
-        console.log(data)
         setOriginalPokemon(data.results)
         
     }
@@ -23,6 +22,7 @@ const Home = () => {
     const PokemonImageURL = (index) => {
         return `${pokemonImage}${index+1}.png` 
     }   
+
 
 
     useEffect(() => {
@@ -41,15 +41,15 @@ const Home = () => {
             {originalPokemon.length === 0 && <p> Carregando </p>}
             {originalPokemon.map((pokemon, index) => (
                 <div key={index}>
-                    <p>
+                    <Card
+                        name={pokemon.name}
+                        id={index}
+                        img={PokemonImageURL(index)}
+                        url={pokemon.url}
+                    >
+
                         
-                       { <img src={PokemonImageURL(index)} />  }  
-                    
-                       {pokemon.name}
-                    
-                       
-                        
-                    </p>
+                    </Card>
                 </div>
             ))}
         </div>
