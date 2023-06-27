@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+
+import './style.css'
+
 const Card = ({name, id, img, url}) => {
   const [typePokemon, setTypePokemon] = useState([])
   
@@ -7,8 +10,11 @@ const Card = ({name, id, img, url}) => {
   const handleTypePokemon = async () => {
       const res = await fetch(url);
       const data = await res.json()
+      
+      
       setTypePokemon(data.types[0].type.name)
-      console.log(typePokemon)
+      
+      
   }
 
 
@@ -29,7 +35,7 @@ const Card = ({name, id, img, url}) => {
             <p> #{id} </p>
             <p>{name} </p>
             <p> Type: </p>
-            <p>{typePokemon[id + 1]}</p> 
+            <p>{typePokemon}</p> 
         </div>
 
         <a href="#"> Detalhes </a>

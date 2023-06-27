@@ -6,7 +6,7 @@ const pokemonURL = import.meta.env.VITE_API_Original151
 const pokemonImage = import.meta.env.VITE_GET_IMAGE
 const pokemonSearch = import.meta.env.VITE_SEARCH 
 
-
+import "./style.css"
 
 const Home = () => {
     const [originalPokemon, setOriginalPokemon] = useState([]);
