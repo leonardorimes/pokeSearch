@@ -26,14 +26,14 @@ const Card = ({name, id, img, url}) => {
 
   
   return (
-    <div className='cardContainer'>
+    <div className='cardContainer' id={typePokemon}>
         <div className="cardHeader">
             <img src={img} alt={'imagem do pokemon' + {name}} />
             <span className='horizontal-line'></span>
         </div>
         <div className="cardDescription">
             <p> #{id} </p>
-            <p>{name} </p>
+            <h2>{name} </h2>
             <p> Type: </p>
             <p>{typePokemon}</p> 
         </div>

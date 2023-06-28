@@ -4,6 +4,70 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: green;
-    gap: 2px;
+    background-color: green;  
+    border-radius: 10px;
+    position: relative;
+    
+}
+
+.horizontal-line{
+
+    position: absolute;
+    border: 0.5px solid black;
+    width: 80%;
+    top: 203px;
+    right: 24px;
+    
+}
+
+.cardHeader img {
+    background-color: white;
+    border-radius: 50%;
+    width: 180px;
+    margin-top: 0.5rem;
+    box-shadow: -1px 6px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 15px;
+}
+
+#grass{
+    background-color: greenyellow;
+}
+
+#fire{
+    background-color: brown;
+}
+
+#water{
+    background-color: aquamarine;
+}
+
+#bug{
+    background-color: yellow;
+}
+
+#normal {
+    background-color: gray;
+}
+
+#poison{
+    background-color: purple;
+}
+
+#electric{
+    background-color: orange;
+}
+
+.cardDescription{
+    display: grid;
+    text-align: center;
+    gap: 8px;
+}
+
+.cardDescription{
+    font-size: 18px;
+}
+
+a {
+    padding: 2rem;
+    color: red;
 }

@@ -4,7 +4,7 @@ import Card from "../../Components/Card";
 
 const pokemonURL = import.meta.env.VITE_API_Original151
 const pokemonImage = import.meta.env.VITE_GET_IMAGE
-const pokemonSearch = import.meta.env.VITE_SEARCH 
+
 
 import "./style.css"
 
