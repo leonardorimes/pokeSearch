@@ -5,54 +5,52 @@ import Card from "../../Components/Card"
 const searchURL = import.meta.env.VITE_SEARCH
 const pokemonImage = import.meta.env.VITE_GET_IMAGE
 
+
+
 const Search = () => {
   const [searchParams] = useSearchParams()
-  const [pokemons, setPokemons] = useState([])
+  const [pokemons, setPokemons] = useState({})
   const query = searchParams.get("q")
 
   
   const PokemonImageURL = (index) => {
     return `${pokemonImage}${index}.png` 
   }  
-  
-  
+
+  const handleURL = ({pokemon}) => {
+      console.log(pokemon)
+    
+  }
+
 
   useEffect(() => {
-
-      const searchWithQueryURL = `${searchURL}${query}`;
-     
-      const getSearchedPokemons = async (url) => {
-        const res = await fetch(url)
-        const data = await res.json()
-        setPokemons(data)
-      }
-      getSearchedPokemons(searchWithQueryURL)
+    (async () => {
+      console.log('searching new pokemons')
+      const res = await fetch(`${searchURL}${query}`)
+      const data = await res.json()
+      const ress = await fetch(data.forms[0].url)
+      const dataa = await ress.json()
+      /* fazer um fetch nessa url*/
+      setPokemons(() => (dataa))
       
-    }, [query])
-    
-    console.log(pokemons)
-  return (
-      <div className="container">
-        <h2 className="title"> Resultados para: <span className="query-text"> {query} </span> </h2>
-        <div className="pokemon-container">
-            {pokemons.length === 0 && <p> Carregando </p>}
-            {pokemons.map((pokemon, index) => (
-                <div key={index}>
-                    <Card
-                        name={pokemon.forms[0].name}
-                        id={pokemon.id}
-                        img={PokemonImageURL(index)}
-                        url={pokemon.forms[0].url}
-                    >
+    })()
+  }, [query])
 
-                        
-                    </Card>
-                </div>
-            ))}
-        </div>
-        </div>
+ 
+
+  return (
+  <div className="pokemon-container">
+      {pokemons.length === 0 && <p> Carregando </p>}
+
+      
+
+      <Card name={pokemons.name} id={pokemons.id} img={PokemonImageURL(pokemons.id)}  url={handleURL(pokemons)} />
+
+
+  </div>
   )
-  
-  }
+
+    }
+
 
 export default Search

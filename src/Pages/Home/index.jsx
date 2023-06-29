@@ -46,10 +46,10 @@ const Home = () => {
                         id={index}
                         img={PokemonImageURL(index)}
                         url={pokemon.url}
-                    >
+                    / >
 
                         
-                    </Card>
+                    
                 </div>
             ))}
         </div>
