@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
 
 
 import './style.css'
@@ -6,7 +7,6 @@ import './style.css'
 const Card = ({name, id, img, url}) => {
   const [typePokemon, setTypePokemon] = useState([])
   
-
   const handleTypePokemon = async () => {
       const res = await fetch(url);
       const data = await res.json()
@@ -38,7 +38,7 @@ const Card = ({name, id, img, url}) => {
             <p>{typePokemon}</p> 
         </div>
 
-        <a href="#"> Detalhes </a>
+        <Link to={`/pokemon/${id}`}> Detalhes </Link>
 
     </div>
   )

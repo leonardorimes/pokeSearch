@@ -1,6 +1,7 @@
 import Header from "../Components/Header"
 import './App.css'
-import Home from "../Pages/Home"
+
+import { Outlet } from "react-router-dom"
 
 function App() {
   
@@ -9,7 +10,7 @@ function App() {
     <>
       <div className="app">
       <Header />
-      <Home />
+      <Outlet/>
       </div>
     </>
   )
