@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useSearchParams  } from "react-router-dom"
 import Card from "../../Components/Card"
+import { Link } from "react-router-dom";
+import {AiOutlineArrowLeft} from 'react-icons/ai'
+
 
 const searchURL = import.meta.env.VITE_SEARCH
 const pokemonImage = import.meta.env.VITE_GET_IMAGE
-
 import "./style.css"
 
 
@@ -41,7 +43,7 @@ const Search = () => {
   <div className="pokemon-SearchContainer">
       {pokemons.length === 0 && <p> Carregando </p>}
 
-      
+      <Link to="/"><AiOutlineArrowLeft className="back" /></Link>
 
       <Card name={pokemons.name} id={pokemons.id} img={PokemonImageURL(pokemons.id)}   />
 

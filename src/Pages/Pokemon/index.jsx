@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
+import { Link } from "react-router-dom";
 const searchURL = import.meta.env.VITE_SEARCH
 const pokemonImage = import.meta.env.VITE_GET_IMAGE
 const pokemonBackImage = import.meta.env.VITE_GET_BACK_IMAGE
-
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import "./style.css"
 
 
@@ -38,8 +39,10 @@ const Pokemon = () => {
   }, [])
 
   return (
+    
     <div className="container-individual-pokemon">
-      {console.log(pokemon)}
+
+      <Link to="/"><AiOutlineArrowLeft className="back" /></Link>
       <h1> {pokemon.name} </h1>
       <div className="images">
         <img src={PokemonImageURL(pokemon.id)} alt={pokemon.name} />
