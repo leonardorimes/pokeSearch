@@ -1,0 +1,12 @@
+.container-individual-pokemon{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.images{
+    display: flex;
+}
+
+.container-individual-pokemon .images img {
+    width: 600px;
+}

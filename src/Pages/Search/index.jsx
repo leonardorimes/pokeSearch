@@ -5,6 +5,7 @@ import Card from "../../Components/Card"
 const searchURL = import.meta.env.VITE_SEARCH
 const pokemonImage = import.meta.env.VITE_GET_IMAGE
 
+import "./style.css"
 
 
 const Search = () => {
@@ -17,10 +18,9 @@ const Search = () => {
     return `${pokemonImage}${index}.png` 
   }  
 
-  const handleURL = ({pokemon}) => {
-      console.log(pokemon)
-    
-  }
+
+
+
 
 
   useEffect(() => {
@@ -30,7 +30,6 @@ const Search = () => {
       const data = await res.json()
       const ress = await fetch(data.forms[0].url)
       const dataa = await ress.json()
-      /* fazer um fetch nessa url*/
       setPokemons(() => (dataa))
       
     })()
@@ -39,12 +38,12 @@ const Search = () => {
  
 
   return (
-  <div className="pokemon-container">
+  <div className="pokemon-SearchContainer">
       {pokemons.length === 0 && <p> Carregando </p>}
 
       
 
-      <Card name={pokemons.name} id={pokemons.id} img={PokemonImageURL(pokemons.id)}  url={handleURL(pokemons)} />
+      <Card name={pokemons.name} id={pokemons.id} img={PokemonImageURL(pokemons.id)}   />
 
 
   </div>

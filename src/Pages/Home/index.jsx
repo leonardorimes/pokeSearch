@@ -20,7 +20,7 @@ const Home = () => {
     }
 
     const PokemonImageURL = (index) => {
-        return `${pokemonImage}${index+1}.png` 
+        return `${pokemonImage}${index}.png` 
     }   
 
 
@@ -44,7 +44,7 @@ const Home = () => {
                     <Card
                         name={pokemon.name}
                         id={index}
-                        img={PokemonImageURL(index)}
+                        img={PokemonImageURL(index+1)}
                         url={pokemon.url}
                     / >
 

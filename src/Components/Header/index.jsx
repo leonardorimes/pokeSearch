@@ -22,7 +22,10 @@ const Header = () => {
   return (
     <header className='headerContainer'>
 
-        <img src={logo} alt="logo-pokemon" />
+       <Link to={"/"}>
+            <img src={logo} alt="logo-pokemon" />
+       </Link> 
+       
         <form onSubmit={handleSubmit}>
             <input 
                 type="text"

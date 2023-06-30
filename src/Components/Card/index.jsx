@@ -38,7 +38,7 @@ const Card = ({name, id, img, url}) => {
             <p>{typePokemon}</p> 
         </div>
 
-        <Link to={`/pokemon/${id}`}> Detalhes </Link>
+        <Link to={`/pokemon/${name}`}> Detalhes </Link>
 
     </div>
   )
